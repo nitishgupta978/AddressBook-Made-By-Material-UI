@@ -19,6 +19,13 @@ class AddressBookService {
       updateAddressBookData(id, data) {
         return axios.put(`${Addressbook_BASED_API_url}/update/${id}`, data);
       }
+      getsortCity() {
+        return axios.get(`${Addressbook_BASED_API_url}/get/sortbycity`);
+      }
+   
+    getsortState() {
+        return axios.get(`${Addressbook_BASED_API_url}/get/sortbystate`);
+      }
     
     }
   export default new AddressBookService();

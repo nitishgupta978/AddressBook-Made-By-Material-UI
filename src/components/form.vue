@@ -14,7 +14,7 @@
             outlined
             ref="firstname"
             v-model="form.firstname"
-           
+            :rules="[() => !!firststname|| 'This field is required']"
             :error-messages="errorMessages"
             label="First Name"
             required
@@ -24,7 +24,7 @@
             outlined
             ref="lastname"
             v-model="form.lastname"
-            
+             :rules="[() => !!lastname|| 'This field is required']"
             :error-messages="errorMessages"
             label="Last Name"
             required
@@ -34,6 +34,8 @@
             outlined
             ref="emailId"
              v-model="form.emailId"
+              :rules="[() => !!emailId|| 'This field is required']"
+            :error-messages="errorMessages"
             label="E-mail"
           ></v-text-field>
 
@@ -41,7 +43,8 @@
             outlined
             ref="phoneNumber"
             v-model="form.phoneNumber"
-           
+            :rules="[() => !!phoneNumber|| 'This field is required']"
+            :error-messages="errorMessages"
             label="Phone number"
             required
             placeholder="eg.8888888888"
@@ -51,7 +54,8 @@
             outlined
             ref="address"
              v-model="form.address"
-           
+            :rules="[() => !!address|| 'This field is required']"
+            :error-messages="errorMessages"
             label="Address Line"
             required
           ></v-text-field>
@@ -62,7 +66,8 @@
                 outlined
                 ref="city"
                 v-model="form.city"
-               
+                :rules="[() => !!city|| 'This field is required']"
+            :error-messages="errorMessages"
                 :items="cities"
                 label="city"
                 placeholder="Select..."
@@ -75,7 +80,8 @@
                 outlined
                 ref="state"
                 v-model="form.state"
-               
+                :rules="[() => !!state|| 'This field is required']"
+                 :error-messages="errorMessages"
                 :items="states"
                 label="state"
                 placeholder="Select..."
@@ -87,7 +93,8 @@
                 outlined
                 ref="zipcode"
                 v-model="form.zipcode"
-                
+                 :rules="[() => !!zipcode|| 'This field is required']"
+                 :error-messages="errorMessages"
                 label="zipcode"
                 required
                 placeholder="eg.6 digit 875462"

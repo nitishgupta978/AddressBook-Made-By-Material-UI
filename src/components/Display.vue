@@ -85,6 +85,19 @@ export default {
         this.Contacts = response.data.data;
       });
     },
+    getsortCity(){
+            AddressBookService.getsortCity().then((response) => {
+              console.log(response.data.data);
+                this.Contacts = response.data.data;   
+            });
+        },
+
+      getsortState(){
+            AddressBookService.getsortState().then((response) => {
+              console.log(response.data.data);
+                this.Contacts = response.data.data;   
+            });
+        },
         
      update(id){
           console.log(id);

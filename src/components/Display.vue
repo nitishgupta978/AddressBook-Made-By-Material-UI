@@ -14,7 +14,7 @@
     <template v-slot:default>
       <thead>
         <tr>
-          <th class="text-left">
+          <th class="text-left" @click="getsortName()">
             First Name
           </th>
           <th class="text-left">
@@ -35,7 +35,7 @@
           <th class="text-left">
             Phone Number
           </th>
-          <th class="text-left">
+          <th class="text-left" @click="getsortEmailId()">
             Email
           </th>
            <th class="text-left">
@@ -94,6 +94,18 @@ export default {
 
       getsortState(){
             AddressBookService.getsortState().then((response) => {
+              console.log(response.data.data);
+                this.Contacts = response.data.data;   
+            });
+        },
+        getsortName(){
+            AddressBookService.getsortName().then((response) => {
+              console.log(response.data.data);
+                this.Contacts = response.data.data;   
+            });
+        },
+        getsortEmailId(){
+            AddressBookService. getsortEmailId().then((response) => {
               console.log(response.data.data);
                 this.Contacts = response.data.data;   
             });

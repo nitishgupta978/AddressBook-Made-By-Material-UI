@@ -20,11 +20,17 @@ class AddressBookService {
         return axios.put(`${Addressbook_BASED_API_url}/update/${id}`, data);
       }
       getsortCity() {
-        return axios.get(`${Addressbook_BASED_API_url}/get/sortbycity`);
+        return axios.get(`${Addressbook_BASED_API_url}/get/sortByCity`);
       }
    
     getsortState() {
-        return axios.get(`${Addressbook_BASED_API_url}/get/sortbystate`);
+        return axios.get(`${Addressbook_BASED_API_url}/get/sortByState`);
+      }
+      getsortName() {
+        return axios.get(`${Addressbook_BASED_API_url}/get/sortByName`);
+      }
+      getsortEmailId() {
+        return axios.get(`${Addressbook_BASED_API_url}/get/sortByEmailId`);
       }
     
     }

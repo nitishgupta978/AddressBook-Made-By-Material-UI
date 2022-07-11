@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import homeView from '../views/HomeView.vue'
 import editForm from '../components/EditForm.vue'
 import form from '../components/form.vue'
+import Login from '../components/Login.vue'
+ 
 
 Vue.use(VueRouter)
 
@@ -25,7 +27,11 @@ const routes = [
     name:'EditForm',
     component:editForm
   },
-  
+  {
+    path:'/Login',
+    name:'Login',
+    component:Login
+  },
 ]
 
 const router = new VueRouter({

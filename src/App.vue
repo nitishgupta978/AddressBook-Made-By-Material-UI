@@ -19,7 +19,7 @@ export default {
   <v-app>
     <v-app-bar
       app
-      color="primary"
+      color="green"
       dark
     >
       <div class="d-flex align-center">
@@ -32,7 +32,7 @@ export default {
           width="40"
         />
         
-     <h1>ADDRESSBOOK</h1>
+     <h1>ADDRESS BOOK</h1>
 
       </div>   
     </v-app-bar>

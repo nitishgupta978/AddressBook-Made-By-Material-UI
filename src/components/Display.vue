@@ -1,7 +1,8 @@
 <template>
  <body>
       <router-link to="/form"><v-btn 
-        color="blue"
+       color="purple"
+        dark
         absolute
         right
         >
@@ -17,7 +18,7 @@
           <th class="text-left" @click="getsortName()">
             First Name
           </th>
-          <th class="text-left">
+          <th class="text-left" >
             Last Name
           </th>
           <th class="text-left">
@@ -71,8 +72,10 @@
 
 <script>
   import AddressBookService from "../service/AddressBookService";
+ 
 export default {
   name: "Displayhome",
+ 
   data() {
     return {
       Contacts: [],

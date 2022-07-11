@@ -1,14 +1,17 @@
 <template>
   <Display />
+  <Login/>
 </template>
 
 
 <script>
 import Display from "./Display.vue";
+import Login from'./Login.vue'
 export default {
   name: "home",
   components: {
     Display,
+    Login
   },
 };
 </script>

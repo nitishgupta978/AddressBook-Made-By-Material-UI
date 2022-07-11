@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center">
     <v-col cols="12" sm="10" md="8" lg="6" width="100" >
-      <v-app-bar color="primary" dark>
+      <v-app-bar color="purple" dark>
         
         <h2 style="margin-left: 223px">Address Book Form</h2>
         <v-icon style="margin-left: 249px">mdi-close</v-icon>
@@ -13,9 +13,9 @@
           <v-text-field
             outlined
             ref="firstname"
-            v-model="form.firstname"
-            :rules="[() => !!firststname|| 'This field is required']"
-            :error-messages="errorMessages"
+            v-model="firstname"
+            :rules="[() => !!firstname || 'This field is required',addressCheck]"
+             :error-messages="errorMessages"
             label="First Name"
             required
           ></v-text-field>
@@ -23,9 +23,9 @@
           <v-text-field
             outlined
             ref="lastname"
-            v-model="form.lastname"
+            v-model="lastname"
              :rules="[() => !!lastname|| 'This field is required']"
-            :error-messages="errorMessages"
+             :error-messages="errorMessages"
             label="Last Name"
             required
           ></v-text-field>
@@ -33,18 +33,18 @@
           <v-text-field
             outlined
             ref="emailId"
-             v-model="form.emailId"
+             v-model="emailId"
               :rules="[() => !!emailId|| 'This field is required']"
-            :error-messages="errorMessages"
+             :error-messages="errorMessages"
             label="E-mail"
           ></v-text-field>
 
           <v-text-field
             outlined
             ref="phoneNumber"
-            v-model="form.phoneNumber"
+            v-model="phoneNumber"
             :rules="[() => !!phoneNumber|| 'This field is required']"
-            :error-messages="errorMessages"
+            
             label="Phone number"
             required
             placeholder="eg.8888888888"
@@ -53,9 +53,10 @@
           <v-text-field
             outlined
             ref="address"
-             v-model="form.address"
-            :rules="[() => !!address|| 'This field is required']"
-            :error-messages="errorMessages"
+             v-model="address"
+            :rules="[() => !!address|| 'This field is required', () => !!Address &
+               Address.length >= 10 || 'Address must be greter  than 10 characters',addressCheck]"
+           
             label="Address Line"
             required
           ></v-text-field>
@@ -65,9 +66,9 @@
               <v-autocomplete
                 outlined
                 ref="city"
-                v-model="form.city"
+                v-model="city"
                 :rules="[() => !!city|| 'This field is required']"
-            :error-messages="errorMessages"
+           
                 :items="cities"
                 label="city"
                 placeholder="Select..."
@@ -79,9 +80,9 @@
               <v-autocomplete
                 outlined
                 ref="state"
-                v-model="form.state"
+                v-model="state"
                 :rules="[() => !!state|| 'This field is required']"
-                 :error-messages="errorMessages"
+                
                 :items="states"
                 label="state"
                 placeholder="Select..."
@@ -92,9 +93,9 @@
               <v-text-field
                 outlined
                 ref="zipcode"
-                v-model="form.zipcode"
+                v-model="zipcode"
                  :rules="[() => !!zipcode|| 'This field is required']"
-                 :error-messages="errorMessages"
+                 
                 label="zipcode"
                 required
                 placeholder="eg.6 digit 875462"
@@ -149,8 +150,10 @@
 
 <script>
  import AddressBookService from '../service/AddressBookService'
+ 
 export default {
   name: "form",
+    
   data: () => ({
     states: [
       "Andhra Pradesh",
@@ -190,6 +193,7 @@ export default {
       "Bikaner",
       "Bhilwara",
       "Bundi",
+      "Bhopal",
       "Churu",
       "Chittorgarh",
       "Dosa",

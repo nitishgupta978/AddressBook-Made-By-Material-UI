@@ -98,7 +98,7 @@
         </v-card-text>
 
         <v-card-actions style="justify-content: flex-start">
-          <router-link to="/">
+          <router-link to="/home">
             <v-btn
               class="text-capitalize"
               width="180px"

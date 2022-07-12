@@ -10,7 +10,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'home',
     component: homeView
   },
@@ -28,7 +28,7 @@ const routes = [
     component:editForm
   },
   {
-    path:'/Login',
+    path:'/',
     name:'Login',
     component:Login
   },
